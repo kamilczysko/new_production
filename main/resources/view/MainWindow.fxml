@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="924.0" prefWidth="1226.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainWindowController">
+   <center>
+      <TabPane prefHeight="883.0" prefWidth="1174.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+         <tabs>
+            <Tab fx:id="orderTab" closable="false" text="Zlecenia">
+               <content>
+                  <fx:include fx:id="ord" source="Orders.fxml" />
+               </content>
+            </Tab>
+            <Tab fx:id="processTab" closable="false" text="Proces">
+               <content>
+                  <fx:include fx:id="proc" source="Process.fxml" />
+               </content>
+            </Tab>
+            <Tab fx:id="operationsTab" closable="false" text="Operacje">
+               <content>
+                  <fx:include fx:id="oper" source="Operations.fxml" />
+               </content>
+            </Tab>
+            <Tab disable="true">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+            <Tab closable="false" text="Wykres">
+               <content>
+                  <fx:include source="Charts.fxml" />
+               </content>
+            </Tab>
+            <Tab text="Raporty">
+               <content>
+                  <fx:include source="Reports.fxml" />
+               </content>
+            </Tab>
+            <Tab text="Kuwety">
+               <content>
+                  <fx:include source="Containers.fxml" />
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </center>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+         <menus>
+            <Menu mnemonicParsing="false" text="Narzędzia">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#addStationView" text="Dodaj stanowisko" />
+                  <MenuItem mnemonicParsing="false" onAction="#refreshEverything" text="Odśwież" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#EndMenuItemEvent" text="Zakończ" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </top>
+</BorderPane>

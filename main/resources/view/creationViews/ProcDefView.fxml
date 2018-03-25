@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<VBox prefHeight="570.0" prefWidth="740.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProcDefController">
+   <children>
+      <HBox prefHeight="616.0" prefWidth="832.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox>
+               <children>
+                  <HBox alignment="CENTER" AnchorPane.rightAnchor="225.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#newOperation" text="Nowa operacja">
+                           <HBox.margin>
+                              <Insets right="50.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="addButton" mnemonicParsing="false" onAction="#addEvent" prefHeight="30.0" prefWidth="30.0" text="+" />
+                        <Button fx:id="removeButton" mnemonicParsing="false" onAction="#removeEvent" prefHeight="30.0" prefWidth="30.0" text="-" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <TreeView fx:id="treePane" prefHeight="495.0" prefWidth="358.0">
+                     <HBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </HBox.margin>
+                  </TreeView>
+               </children>
+               <HBox.margin>
+                  <Insets left="10.0" top="10.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox prefHeight="616.0" prefWidth="350.0">
+               <children>
+                  <Label fx:id="artLabel" prefHeight="21.0" text="Proces: ">
+                     <VBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox>
+                     <children>
+                        <Label alignment="TOP_RIGHT" prefHeight="0.0" prefWidth="100.0" text="Nazwa procesu: " BorderPane.alignment="CENTER">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="procNameField" prefHeight="0.0" prefWidth="250.0" HBox.hgrow="NEVER">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <Label alignment="TOP_RIGHT" prefHeight="17.0" prefWidth="100.0" text="Opis: ">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                           <HBox.margin>
+                              <Insets bottom="50.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextArea fx:id="procDescField" prefHeight="50.0" prefWidth="240.0" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </TextArea>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <Label alignment="CENTER_RIGHT" prefHeight="0.0" prefWidth="100.0" text="Wielkość partii: ">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="batchSizeField" prefHeight="25.0" prefWidth="90.0">
+                           <HBox.margin>
+                              <Insets bottom="2.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Separator prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Separator>
+                  <VBox prefHeight="441.0" prefWidth="350.0">
+                     <children>
+                        <Label text="Operacja:">
+                           <VBox.margin>
+                              <Insets left="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox>
+                           <children>
+                              <Label alignment="TOP_RIGHT" prefWidth="100.0" text="Nazwa:" />
+                              <TextField fx:id="operationNameField" prefHeight="2.0" prefWidth="250.0">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="15.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox>
+                           <children>
+                              <Label alignment="TOP_RIGHT" prefWidth="100.0" text="Opis" />
+                              <TextArea fx:id="operationDescriptionField" prefHeight="50.0" prefWidth="250.0" />
+                           </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox>
+                           <children>
+                              <Label alignment="TOP_RIGHT" prefHeight="17.0" prefWidth="170.0" text="Czas przygotowawczy:" />
+                              <TextField fx:id="preTimeField" prefHeight="25.0" prefWidth="180.0">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox>
+                           <children>
+                              <Label alignment="TOP_RIGHT" prefWidth="170.0" text="Czas zakończeniowy:" />
+                              <TextField fx:id="postTimeField" prefHeight="2.0" prefWidth="180.0">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox>
+                           <children>
+                              <Label alignment="TOP_RIGHT" prefWidth="170.0" text="Czas operacji:" />
+                              <TextField fx:id="durationField" prefHeight="2.0" prefWidth="180.0">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox>
+                           <children>
+                              <Label alignment="TOP_RIGHT" prefWidth="100.0" text="Typ stanowiska:" />
+                              <ComboBox fx:id="stationTypeBox" prefHeight="25.0" prefWidth="197.0">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                                 <contextMenu>
+                                    <ContextMenu>
+                                      <items>
+                                        <MenuItem mnemonicParsing="false" onAction="#refreshTypes" text="Odśwież" />
+                                      </items>
+                                    </ContextMenu>
+                                 </contextMenu>
+                              </ComboBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox>
+                           <children>
+                              <Label alignment="TOP_RIGHT" prefWidth="100.0" text="Kolejna operacja: " />
+                              <ComboBox fx:id="nextOperationBox" prefHeight="25.0" prefWidth="197.0">
+                                 <contextMenu>
+                                    <ContextMenu>
+                                       <items>
+                                          <MenuItem mnemonicParsing="false" onAction="#refreshTypes" text="Odśwież" />
+                                       </items>
+                                    </ContextMenu>
+                                 </contextMenu>
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </ComboBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <StackPane>
+                           <children>
+                              <Button fx:id="applyButton" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="#applyOperationChanges" text="Zastosuj" />
+                           </children>
+                           <VBox.margin>
+                              <Insets top="15.0" />
+                           </VBox.margin>
+                        </StackPane>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </VBox>
+               </children>
+               <HBox.margin>
+                  <Insets left="10.0" top="10.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+      </HBox>
+      <StackPane>
+         <children>
+            <Button fx:id="saveButton" alignment="CENTER" contentDisplay="TOP" disable="true" mnemonicParsing="false" onAction="#saveProcess" prefHeight="30.0" prefWidth="100.0" text="Zapisz">
+               <VBox.margin>
+                  <Insets left="10.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+         <VBox.margin>
+            <Insets top="15.0" />
+         </VBox.margin>
+      </StackPane>
+   </children>
+</VBox>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox prefHeight="242.0" prefWidth="436.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BatchSettingsController">
+   <children>
+      <VBox prefHeight="273.0" prefWidth="200.0">
+         <children>
+            <ListView fx:id="batchList" prefHeight="246.0" prefWidth="197.0">
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#selectAllInBatchList" text="Zaznacz wszystko" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu>
+            </ListView>
+         </children>
+      </VBox>
+      <VBox>
+         <children>
+            <Button fx:id="addButton" mnemonicParsing="false" onAction="#addBatches" text="&gt;&gt;">
+               <VBox.margin>
+                  <Insets top="80.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="removeButton" mnemonicParsing="false" onAction="#removeBatches" text="&lt;&lt;">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <VBox prefHeight="273.0" prefWidth="200.0">
+         <children>
+            <ComboBox fx:id="stationBox" onAction="#selectStation" prefHeight="25.0" prefWidth="200.0" />
+            <ListView fx:id="stationList" prefHeight="218.0" prefWidth="201.0">
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#selectAllInStationList" text="Zaznacz wszystko" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu>
+            </ListView>
+         </children>
+      </VBox>
+   </children>
+</HBox>

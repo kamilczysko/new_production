@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox prefHeight="602.0" prefWidth="869.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ContainerController">
+   <children>
+      <VBox prefHeight="450.0" prefWidth="868.0">
+         <children>
+            <TableView fx:id="table" prefHeight="279.0" prefWidth="868.0">
+              <columns>
+                <TableColumn fx:id="idColumn" prefWidth="112.0" text="Id" visible="false" />
+                <TableColumn fx:id="signColumn" prefWidth="204.0" text="Oznaczenie" />
+                  <TableColumn fx:id="createDateColumn" prefWidth="123.0" text="Data utworzenia" />
+                  <TableColumn fx:id="deleteDateColumn" prefWidth="209.0" text="Data kasacji" visible="false" />
+                  <TableColumn fx:id="colorColumn" minWidth="0.0" prefWidth="237.0" text="Kolor" />
+              </columns>
+            </TableView>
+            <HBox>
+               <children>
+                  <Button mnemonicParsing="false" onAction="#addContainer" prefWidth="125.0" text="Dodaj">
+                     <HBox.margin>
+                        <Insets left="150.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#saveContainser" prefHeight="25.0" prefWidth="125.0" text="Zapisz">
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#print" prefHeight="25.0" prefWidth="125.0" text="Drukuj">
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="129.0" />
+                  <Button mnemonicParsing="false" onAction="#deleteContainer" prefHeight="25.0" prefWidth="125.0" text="Usuń">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <TableView fx:id="tableWithDeleted" prefHeight="211.0" prefWidth="868.0">
+              <columns>
+                <TableColumn fx:id="deletedId" prefWidth="75.0" text="Id" />
+                <TableColumn fx:id="deletedMark" prefWidth="75.0" text="Oznaczenie" />
+                  <TableColumn fx:id="deletedCreateDate" prefWidth="183.0" text="Data utworzenia" />
+                  <TableColumn fx:id="deletedDeleteDate" prefWidth="222.0" text="Data kasacji" />
+                  <TableColumn fx:id="deletedColor" prefWidth="178.0" text="Kolor" />
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </children>
+</HBox>

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="490.0" prefWidth="875.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StationDefinitionController">
+   <center>
+      <TabPane>
+         <tabs>
+            <Tab text="Dodaj">
+               <content>
+                  <HBox fx:id="container" prefHeight="656.0" prefWidth="766.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <VBox prefHeight="412.0" prefWidth="357.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="360.0" text="Typ stanowiska">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <HBox alignment="TOP_CENTER">
+                                 <children>
+                                    <Label prefHeight="30.0" prefWidth="52.0" text="Nazwa*: " />
+                                    <TextField fx:id="stationTypeName" prefHeight="25.0" prefWidth="200.0">
+                                       <HBox.margin>
+                                          <Insets left="5.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="TOP_CENTER">
+                                 <children>
+                                    <Label prefHeight="33.0" prefWidth="38.0" text="Opis: " />
+                                    <TextArea fx:id="stationTypeDescription" prefHeight="50.0" prefWidth="200.0">
+                                       <HBox.margin>
+                                          <Insets left="20.0" />
+                                       </HBox.margin>
+                                    </TextArea>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="15.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="BOTTOM_CENTER">
+                                 <children>
+                                    <Button fx:id="saveTypeButton" contentDisplay="TOP" disable="true" mnemonicParsing="false" onAction="#saveStationType" prefHeight="30.0" prefWidth="100.0" text="Dodaj">
+                                       <VBox.margin>
+                                          <Insets left="500.0" top="40.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <ListView fx:id="stationTypeList" prefHeight="157.0" prefWidth="317.0">
+                                 <VBox.margin>
+                                    <Insets top="50.0" />
+                                 </VBox.margin>
+                              </ListView>
+                              <HBox alignment="BOTTOM_CENTER">
+                                 <children>
+                                    <Button fx:id="editTypeButton" disable="true" mnemonicParsing="false" onAction="#EditStationType" prefWidth="100.0" text="Edytuj" />
+                                    <Button fx:id="deleteTypeButton" disable="true" mnemonicParsing="false" onAction="#DeleteStationType" prefWidth="100.0" text="Usuń">
+                                       <HBox.margin>
+                                          <Insets left="110.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                        <Separator orientation="VERTICAL" prefHeight="200.0" />
+                        <VBox prefHeight="427.0" prefWidth="315.0">
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
+                           </padding>
+                           <children>
+                              <Label alignment="CENTER" prefHeight="17.0" prefWidth="553.0" text="Stanowisko">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Label>
+                              <HBox>
+                                 <children>
+                                    <VBox>
+                                       <children>
+                                          <HBox alignment="TOP_CENTER">
+                                             <children>
+                                                <Label prefHeight="17.0" prefWidth="60.0" text="Nazwa*: ">
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <TextField fx:id="stationNameField" prefHeight="31.0" prefWidth="200.0">
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </TextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                             <padding>
+                                                <Insets top="10.0" />
+                                             </padding>
+                                          </HBox>
+                                          <HBox alignment="TOP_CENTER">
+                                             <children>
+                                                <Label prefHeight="17.0" prefWidth="60.0" text="Opis: ">
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <TextArea fx:id="stationDescriptionArea" prefHeight="50.0" prefWidth="200.0">
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </TextArea>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <VBox>
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <VBox prefHeight="63.0" prefWidth="469.0">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="3.0" prefWidth="260.0">
+                                       <children>
+                                          <Label prefHeight="69.0" prefWidth="130.0" text="Czas przygotowawczy*: ">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="preTimeField" prefHeight="25.0" prefWidth="85.0" promptText="00:00:00" text="00:00:10">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets top="10.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="0.0" prefWidth="269.0">
+                                       <children>
+                                          <Label prefHeight="33.0" prefWidth="130.0" text="Czas zakończeniowy*: ">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="postTimeField" prefHeight="31.0" prefWidth="85.0" promptText="00:00:00" text="00:00:10">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <HBox alignment="TOP_CENTER">
+                                 <children>
+                                    <Button fx:id="saveStationButton" disable="true" mnemonicParsing="false" onAction="#saveStation" prefHeight="30.0" prefWidth="100.0" text="Dodaj">
+                                       <VBox.margin>
+                                          <Insets left="500.0" top="40.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <ListView fx:id="stationList" prefHeight="160.0" prefWidth="200.0">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </ListView>
+                              <HBox>
+                                 <children>
+                                    <Button fx:id="editStationButton" disable="true" mnemonicParsing="false" onAction="#EditStation" prefWidth="100.0" text="Edytuj" />
+                                    <Button fx:id="deleteStationButton" disable="true" mnemonicParsing="false" onAction="#DeleteStation" prefWidth="100.0" text="Usuń">
+                                       <HBox.margin>
+                                          <Insets left="110.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </center>
+   <bottom>
+      <Button mnemonicParsing="false" onAction="#CloseWindow" prefHeight="29.0" prefWidth="158.0" text="Zakończ" BorderPane.alignment="TOP_RIGHT">
+         <BorderPane.margin>
+            <Insets bottom="5.0" right="10.0" />
+         </BorderPane.margin>
+      </Button>
+   </bottom>
+</BorderPane>

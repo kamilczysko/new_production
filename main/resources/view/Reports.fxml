@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="645.0" prefWidth="702.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ReportController">
+   <top>
+      <HBox prefHeight="22.0" prefWidth="469.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="25.0" prefWidth="77.0" text="Raport z dnia: " BorderPane.alignment="CENTER">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Label>
+            <DatePicker fx:id="chooseDay" prefHeight="25.0" prefWidth="216.0" />
+            <Button mnemonicParsing="false" onAction="#generateReport" prefHeight="25.0" prefWidth="95.0" text="Generuj">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="10.0" top="10.0" />
+         </BorderPane.margin>
+      </HBox>
+   </top>
+   <bottom>
+      <HBox>
+         <children>
+            <Pane fx:id="fileChooserPane" prefHeight="0.0" prefWidth="251.0" />
+            <Button fx:id="saveButton" mnemonicParsing="false" onAction="#saveReport" prefHeight="25.0" prefWidth="95.0" text="Zapisz" BorderPane.alignment="CENTER_RIGHT">
+               <BorderPane.margin>
+                  <Insets bottom="10.0" right="40.0" top="10.0" />
+               </BorderPane.margin>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="5.0" top="10.0" />
+         </BorderPane.margin>
+      </HBox>
+   </bottom>
+   <left>
+      <TreeView fx:id="treePane" prefHeight="507.0" prefWidth="434.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <VBox prefHeight="445.0" prefWidth="294.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox>
+               <children>
+                  <Label prefHeight="26.0" prefWidth="40.0" text="Data:" />
+                  <TextField fx:id="dateField" editable="false" prefHeight="25.0" prefWidth="200.0" />
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <Label prefHeight="26.0" prefWidth="40.0" text="Start:" />
+                  <TextField fx:id="startField" editable="false" prefHeight="25.0" prefWidth="200.0" />
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <Label prefHeight="26.0" prefWidth="40.0" text="Koniec:" />
+                  <TextField fx:id="endField" editable="false" prefHeight="25.0" prefWidth="200.0" />
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <Label prefHeight="26.0" prefWidth="77.0" text="Operator:" />
+                  <TextField fx:id="operationField" editable="false" prefHeight="25.0" prefWidth="200.0" />
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <Label prefHeight="26.0" prefWidth="40.0" text="Ilość:" />
+                  <TextField fx:id="amountField" editable="false" prefHeight="25.0" prefWidth="200.0" />
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <Label prefHeight="26.0" prefWidth="67.0" text="Problemy:" />
+                  <TextField fx:id="problemsField" editable="false" prefHeight="25.0" prefWidth="200.0" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </right>
+</BorderPane>

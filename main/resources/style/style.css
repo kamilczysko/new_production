@@ -1,0 +1,122 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+.menu-bar{
+	 /*-fx-background-color: white;*/
+}
+
+.tooltip
+{
+     -fx-background-radius: 0 0 0 0;
+     -fx-background-color: #999999 ;
+     -fx-font-color:black;
+ }
+
+.page-corner {
+    -fx-shape: " ";
+}
+
+.labsiorek{
+	-fx-border-radius: 2;
+	-fx-text-alignment: CENTER;
+	-fx-font-size:10;
+	-fx-border-color: black;
+	-fx-border-width: 2px;
+}
+.labsiorek-last{
+	-fx-background-radius:5;
+	-fx-text-alignment: CENTER;
+	-fx-font-size:15;
+}
+
+.labsiorek-started{
+	-fx-background-radius:7;
+	-fx-text-alignment: CENTER;
+	-fx-font-size:15;
+	-fx-font-weight: bold;
+	-fx-border-color: #AD1000;
+	-fx-border-radius: 7;
+	-fx-border-width: 3px;
+}
+
+.labsiorek-modified{
+	-fx-background-radius:5;
+	-fx-text-alignment: CENTER;
+	-fx-font-size:15;	
+	-fx-border-color: #4FA706;
+	-fx-background-color: #58C200;
+	-fx-border-radius: 5;
+	-fx-border-width: 2;
+}
+
+.labsiorek-done{
+	-fx-background-radius:5;
+	-fx-text-alignment: CENTER;
+	-fx-font-size:15;	
+	-fx-border-color: #4FA706;
+	-fx-background-color: #58C200;
+	-fx-border-radius: 2;
+	-fx-border-width: 2;
+}
+.labsiorek-done:hover{
+	-fx-background-radius:5;
+	-fx-text-alignment: CENTER;
+	-fx-font-size:15;	
+	-fx-border-color: black;
+	-fx-background-color: #58C200;
+	-fx-border-radius: 5;
+	-fx-border-width: 2;
+}
+
+
+.labsiorek-started:hover{
+	-fx-background-radius:7;
+	-fx-text-alignment: CENTER;
+	-fx-font-size:15;
+	-fx-font-weight: bold;
+	-fx-border-color: #FF0000;
+	-fx-border-radius: 7;
+	-fx-border-width: 3;
+}
+
+.labsiorek:hover{
+	
+	-fx-border-width: 5px;
+	-fx-border-radius: 5;
+}
+
+.rectColor{
+	-fx-background-color: #4B2D73 ;
+	}
+
+.rectColor.hover{
+	-fx-background-color: #603896 ;
+}
+
+.r:hover{/* rysowanie ramki przy kwadratach */
+	-fx-border-color: black;
+}
+
+.pindol{
+	-fx-border-color: black;
+}
+
+.thick-lines{    
+	-fx-stroke-width: 0.5;
+	-fx-stroke: black;
+}
+
+.fat-lines{    
+	-fx-stroke-width: 1.0;
+	-fx-stroke: black;
+}
+
+.cursor{    
+	-fx-stroke-width: 0.1;
+	-fx-stroke: black;
+}
+
+.actualTimeCursor{    
+	-fx-stroke-width: 0.5;
+	-fx-stroke: green;
+}
+

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.canvas.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<VBox prefHeight="500.0" prefWidth="908.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.OperationsController">
+   <children>
+      <HBox prefHeight="451.0" prefWidth="908.0">
+         <children>
+            <VBox>
+               <children>
+                  <TreeView fx:id="treeView" prefHeight="451.0" prefWidth="318.0" />
+                  <TextArea fx:id="operationDescriptionField" prefHeight="200.0" prefWidth="200.0" />
+               </children>
+            </VBox>
+            <Separator orientation="VERTICAL" prefHeight="200.0">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Separator>
+            <VBox prefHeight="451.0" prefWidth="562.0">
+               <children>
+                  <HBox>
+                     <children>
+                        <ListView fx:id="stationListBusy" prefHeight="194.0" prefWidth="346.0" />
+                        <VBox fx:id="box" prefHeight="193.0" prefWidth="356.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#setPresentMoment" prefHeight="25.0" prefWidth="113.0" text="Teraz">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="10.0" top="10.0" />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <Label text="Czas przygotowawczy" />
+                        <TextField fx:id="preTimeField" prefHeight="0.0" prefWidth="113.0" />
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <Label text="Czas zakończeniowy" />
+                        <TextField fx:id="postTimeField" prefHeight="0.0" prefWidth="113.0" />
+                     </children>
+                     <opaqueInsets>
+                        <Insets top="5.0" />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="196.0" prefWidth="562.0">
+                     <children>
+                        <fx:include source="OperationsAndStations.fxml" />
+                        <Button fx:id="updateButton" mnemonicParsing="false" onAction="#updateOperation" prefHeight="25.0" prefWidth="76.0" text="Aktualizuj" />
+                     </children>
+                  </HBox>
+               </children></VBox>
+         </children>
+      </HBox>
+      <Separator prefHeight="0.0" prefWidth="924.0">
+         <VBox.margin>
+            <Insets bottom="5.0" top="5.0" />
+         </VBox.margin>
+      </Separator>
+      <Pane>
+         <children>
+            <Button fx:id="saveButton" mnemonicParsing="false" onAction="#save" prefHeight="30.0" prefWidth="117.0" text="Zapisz" />
+            <Button fx:id="printButton" layoutX="770.0" mnemonicParsing="false" onAction="#printAll" prefHeight="30.0" prefWidth="117.0" text="Drukuj" />
+            <ProgressIndicator fx:id="progressIndicator" layoutX="156.0" layoutY="-6.0" prefHeight="40.0" prefWidth="48.0" progress="0.0" />
+         </children>
+         <VBox.margin>
+            <Insets left="5.0" right="5.0" />
+         </VBox.margin>
+      </Pane>
+   </children>
+</VBox>

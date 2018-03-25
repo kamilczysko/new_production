@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.HBox?>
+
+<VBox prefHeight="862.0" prefWidth="1156.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ChartController">
+   <children>
+      <HBox prefHeight="30.0" prefWidth="964.0">
+         <children>
+            <Label text="Zlecenie:" />
+            <ComboBox fx:id="orderBox" onAction="#selectOrder" prefHeight="25.0" prefWidth="573.0">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </ComboBox>
+            <Button mnemonicParsing="false" onAction="#bigger" prefWidth="25.0" text="+">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#smaller" prefWidth="25.0" text="-" />
+            <ComboBox fx:id="setDayOnChart" prefHeight="25.0" prefWidth="142.0">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </ComboBox>
+            <Button mnemonicParsing="false" onAction="#setWholeChart" prefHeight="25.0" prefWidth="103.0" text="Cały wykres">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#fitChart" text="Dopasuj">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </HBox>
+      <ScrollPane fx:id="scrollPane" prefHeight="794.0" prefWidth="1156.0">
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#refresh" text="Odśwież" />
+              </items>
+            </ContextMenu>
+         </contextMenu></ScrollPane>
+      <Label fx:id="dateLabel" alignment="CENTER" prefHeight="73.0" prefWidth="164.0">
+         <VBox.margin>
+            <Insets bottom="5.0" left="25.0" top="5.0" />
+         </VBox.margin>
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+   </children>
+</VBox>

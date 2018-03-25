@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="900.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StatController">
+   <bottom>
+      <AnchorPane>
+         <children>
+            <Button fx:id="endButton" mnemonicParsing="false" onAction="#endActionButton" prefHeight="10.0" prefWidth="120.0" text="Koniec" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="20.0" BorderPane.alignment="CENTER_RIGHT" StackPane.alignment="TOP_RIGHT" />
+            <Label fx:id="cursorDateLabel" contentDisplay="BOTTOM" layoutX="14.0" layoutY="20.0" prefHeight="15.0" prefWidth="200.0" />
+            <Button layoutX="823.0" layoutY="20.0" mnemonicParsing="false" onAction="#refreshMaps" text="Odśwież" visible="false" />
+         </children>
+      </AnchorPane>
+   </bottom>
+   <top>
+      <TabPane prefHeight="105.0" prefWidth="1100.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab fx:id="orderTab" onSelectionChanged="#orderTabEvent" text="Zlecenie">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Zlecenie:">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <ComboBox fx:id="orderBox" onAction="#chooseOrder" prefHeight="15.0" prefWidth="220.0" VBox.vgrow="ALWAYS" />
+                     </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </VBox>
+               </content></Tab>
+          <Tab fx:id="machineTab" onSelectionChanged="#machineTabEvent" text="Maszyna">
+               <content>
+                  <VBox prefHeight="200.0">
+                     <children>
+                        <Label prefHeight="21.0" prefWidth="80.0" text="Maszyna:">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin></Label>
+                        <ComboBox fx:id="machineList" layoutX="14.0" layoutY="11.0" onAction="#machineChoose" prefHeight="20.0" prefWidth="220.0" GridPane.rowIndex="1" VBox.vgrow="ALWAYS" />
+                     </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </VBox>
+               </content></Tab>
+        </tabs>
+         <contextMenu>
+            <ContextMenu fx:id="chartMenu">
+              <items>
+                <MenuItem fx:id="refreshMenuItem" mnemonicParsing="false" onAction="#refreshEvent" text="Odśwież" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+      </TabPane>
+   </top>
+   <center>
+      <SplitPane orientation="VERTICAL" prefHeight="723.0" prefWidth="1100.0">
+        <items>
+            <ScrollPane fx:id="scrollPane" prefHeight="454.0" prefWidth="1098.0">
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                        <MenuItem fx:id="refreshMenuItem" mnemonicParsing="false" onAction="#refreshChart" text="Odśwież" />
+                      <MenuItem fx:id="updateMenuItem" mnemonicParsing="false" onAction="#updateChart" text="Aktualizuj" />
+                        <MenuItem disable="true" mnemonicParsing="false" text="Zapisz" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu>
+            </ScrollPane>
+        </items>
+      </SplitPane>
+   </center>
+</BorderPane>

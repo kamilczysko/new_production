@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.OrdersController">
+   <children>
+      <HBox prefHeight="50.0" prefWidth="200.0" />
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label prefHeight="112.0" prefWidth="98.0" text="Zlecenia">
+               <HBox.margin>
+                  <Insets left="180.0" />
+               </HBox.margin>
+            </Label>
+            <ComboBox fx:id="orderBox" onAction="#selectedItem" prefHeight="31.0" prefWidth="521.0">
+               <HBox.margin>
+                  <Insets top="35.0" />
+               </HBox.margin>
+            </ComboBox>
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label prefHeight="100.0" prefWidth="100.0" text="Artykuł:">
+               <HBox.margin>
+                  <Insets left="180.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="artNameLabel" prefHeight="100.0" text="..." />
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label prefHeight="100.0" prefWidth="110.0" text="Ilość:">
+               <HBox.margin>
+                  <Insets left="180.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="artAmountLabel" prefHeight="100.0" prefWidth="387.0" text="..." />
+         </children>
+      </HBox>
+      <HBox>
+         <children>
+            <Label alignment="TOP_LEFT" prefHeight="92.0" prefWidth="93.0" text="Opis:">
+               <HBox.margin>
+                  <Insets left="180.0" />
+               </HBox.margin>
+            </Label>
+            <TextArea fx:id="artDescriptionField" prefHeight="162.0" prefWidth="519.0">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </TextArea>
+         </children>
+      </HBox>
+   </children>
+</VBox>

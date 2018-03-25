@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<TabPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProcessController">
+   <tabs>
+      <Tab text="Procesy">
+         <content>
+            <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="950.0">
+               <bottom>
+                  <VBox>
+                     <children>
+                        <TableView fx:id="partTable" prefHeight="329.0" prefWidth="950.0" BorderPane.alignment="CENTER">
+                           <columns>
+                              <TableColumn fx:id="lpColumn" prefWidth="107.0" text="Lp" />
+                              <TableColumn fx:id="groupColumn" prefWidth="150.0" text="Grupa" />
+                              <TableColumn fx:id="idColumn" prefWidth="108.0" text="Id" />
+                              <TableColumn fx:id="amountColumn" prefWidth="206.0" text="Liczba sztuk w partii" />
+                              <TableColumn fx:id="descriptionColumn" maxWidth="1000.0" prefWidth="385.0" text="Opis" />
+                           </columns>
+                           <contextMenu>
+                              <ContextMenu>
+                                 <items>
+                                    <MenuItem fx:id="printMenu" mnemonicParsing="false" onAction="#print" text="Drukuj" />
+                                    <MenuItem fx:id="selectAllMenu" mnemonicParsing="false" onAction="#selectAll" text="Zaznacz wszystkie pozycje" />
+                                    <SeparatorMenuItem mnemonicParsing="false" />
+                                    <MenuItem fx:id="undoTableMenuItem" mnemonicParsing="false" onAction="#undoPortions" text="Przywróć partie" />
+                                    <MenuItem fx:id="joinDownMenuItem" mnemonicParsing="false" onAction="#joinDown" text="Połącz w dół" />
+                                 </items>
+                              </ContextMenu>
+                           </contextMenu>
+                           <BorderPane.margin>
+                              <Insets bottom="50.0" />
+                           </BorderPane.margin>
+                        </TableView>
+                        <Button mnemonicParsing="false" onAction="#printLabel" prefHeight="25.0" prefWidth="149.0" text="Drukuj etykietę" />
+                     </children>
+                  </VBox>
+               </bottom>
+               <top>
+                  <SplitPane dividerPositions="0.669831223628692" prefHeight="300.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+                     <items>
+                        <ListView fx:id="procList" onMouseClicked="#listEvent" prefHeight="298.0" prefWidth="539.0">
+                           <contextMenu>
+                              <ContextMenu fx:id="contextMenu">
+                                 <items>
+                                    <MenuItem fx:id="procMenuItem" mnemonicParsing="false" onAction="#addProces" text="Dodaj proces" />
+                                    <MenuItem fx:id="editMenuItem" mnemonicParsing="false" onAction="#editEvent" text="Edytuj" />
+                                    <MenuItem fx:id="deleteMenuItem" mnemonicParsing="false" onAction="#deleteEvent" text="Usuń" />
+                                 </items>
+                              </ContextMenu>
+                           </contextMenu>
+                        </ListView>
+                        <ScrollPane prefViewportWidth="620.0">
+                           <content>
+                              <TextArea fx:id="procDescArea" editable="false" prefHeight="297.0" prefWidth="309.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </content>
+                        </ScrollPane>
+                     </items>
+                     <BorderPane.margin>
+                        <Insets top="10.0" />
+                     </BorderPane.margin>
+                  </SplitPane>
+               </top>
+            </BorderPane>
+         </content>
+      </Tab>
+      <Tab text="Nowy proces">
+         <content>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <fx:include source="creationViews/ProcDefView.fxml" />
+               </children>
+            </VBox>
+         </content>
+      </Tab>
+   </tabs>
+</TabPane>
